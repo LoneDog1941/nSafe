@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="author" content="Emanuele Barbiero">
+
+    <title>_[nSafe]_</title>
+
+    <script src="nSafe_code.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            margin: 0 5% 5% 5%;
+            background-color : #ffedad;
+            color: #4b330c;
+        }
+        button {
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            border-radius: 24px;
+            padding: 1%;
+            cursor: pointer;
+        }
+        table {
+            background-color: #a48f69;
+            border-radius : 12px;
+            text-align: center;
+            border-color: #000;
+            border-style: solid;
+            border-width: 1px;
+            width: 100%;
+            padding: 2% 1% 2% 1%;
+
+
+        }
+        th, td {
+            text-align : center;
+            border-radius: 6px;
+            background-color: #402c11;
+            color: #f9e583;
+            padding:1% 0 1% 0;
+            vertical-align: middle;
+            border-color:#ffcf54;
+            border-width: 1px;
+            border-style: solid;
+        }
+        select {
+            background-color: #f9e583;
+            color : #402c11;
+            text-align : center;
+            width : 80%;
+            padding: 1% 0 1% 0;
+            border-radius: 6px;
+        }
+    </style>
+    <script>
+        function add_User(){
+                create_User('tbody_display_users');
+            }
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>
+                WELCOME TO nSAFE!
+            </h1>
+        </div>
+    </header>
+    <div>
+        <button onclick="clear_localStorage()">Pulisci la memoria</button>
+        <button onclick="add_User()">Aggiungi nuovo Utente</button>
+    </div>
+    <br><br>
+    <div>
+        <table>
+            <thead>
+                <th colspan="3">
+                    Elenco dei contatti
+                </th>
+                <tr>
+                    <td width="40%">NOME</td>
+                    <td width="40%">CREDITO</td>
+                    <td width="20%">MODIFICA</td>
+                </tr>
+            </thead>
+            <tbody id="tbody_display_users">
+                    <script>
+                        load_localstorage('tbody_display_users');
+                    </script>
+            </tbody>
+        </table>
+    </div>
+    
+
+</body>
+</html>
